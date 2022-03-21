@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form for masai admission</title>
+   
+        <link rel="stylesheet" href="form.css">
+
+</head>
+<body>
+    <form action="" >
+       
+        <div>
+            <label for="">Name</label>
+            <input type="text" id="name" placeholder="enter your name"/>
+        </div>
+        <div>
+            <label for="">Age</label>
+            <input  id="age" type="number" placeholder="enter your age"  />
+        </div>
+
+        <div>
+            <label for="">class</label>
+            <input id="class" type="number" placeholder="enter your class"  />
+        </div>
+        <input type="submit" id="submit"/>
+    </form>
+
+    <table>
+        <caption id="cap">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>class</th>
+            </tr>
+        </caption>
+        <tbody></tbody>
+    </table>
+    
+</body>
+</html>
+
+<script>
+
+    document.querySelector("form").addEventListener("submit",print);
+    function print(){
+        event.preventDefault();
+        var name1=document.querySelector("#name").value;
+        var age=document.querySelector("#age").value;
+        var clas=document.querySelector("#class").value;
+
+       if(name1=="" || age=="" || clas==""){
+           alert("please fill all details first");
+       }
+       else{
+        var tr=document.createElement("tr");
+
+var td1=document.createElement("td");
+td1.innerText=name1;
+
+var td2=document.createElement("td");
+td2.innerText=age;
+
+var td3=document.createElement("td");
+td3.innerText=clas;
+
+tr.append(td1,td2,td3);
+document.querySelector("tbody").append(tr);
+       }
+
+    }
+</script>
